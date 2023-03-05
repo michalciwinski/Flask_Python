@@ -63,3 +63,15 @@ def WriteToTableUsers(firstname, lastname, address, usertype):
     #vendor_id = cur.fetchone()[0]
     # commit the changes to the database
     conn.commit()
+
+
+
+
+def initDBLoop():
+    # initilize DB
+    ConnectDB()
+    print('Write')
+    datas = ['Michal', 'Ciwinski', 'Wojakowa 243', 'User']
+    WriteToTableUsers(datas[0], datas[1], datas[2], datas[3])
+    print('close...')
+    CloseConnectionDB()
